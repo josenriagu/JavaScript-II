@@ -1,3 +1,4 @@
+//callback.js
 const items2 = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function contains(item, list, cb) {
@@ -17,6 +18,7 @@ contains('Gums', items, (containsItem) => {
 })
 
 
+//Closure.js
 function outer() {
     let count = 0;
     return () => {
@@ -25,19 +27,13 @@ function outer() {
     }
 }
 
-//As a one-liner
+//As a one-liner??
+function outer() {let count = 0;return () => {count = count + 1;console.log(count)}}
+
 
 // function outer() {let count = 0; return () => {count = count + 1; console.log(count)}}
 const hello = outer();
 
 hello();
 hello();
-// hello();
-// inner();
-// inner();
-// inner();
-// inner();
-// inner();
-// inner();
-// inner();
-// inner();
+hello();
