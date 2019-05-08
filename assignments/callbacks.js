@@ -79,9 +79,18 @@ contains2('Gum', items, (containsItem) => {
 })
 
 /* STRETCH PROBLEM */
+const test = [4,1,1,3,3,2,3,4,2,5,5,6,6,6];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let noDupes = array.filter((item, index) => {
+    return array.indexOf(item) === index;
+  });
+  cb(noDupes);
 }
+
+removeDuplicates(test, (removeDupes) => {
+  console.log(removeDupes);
+})
