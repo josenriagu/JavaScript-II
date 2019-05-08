@@ -28,7 +28,8 @@ function outer() {
 }
 
 //As a one-liner??
-function outer() {let count = 0;return () => {count = count + 1;console.log(count)}}
+// function outer() {let count = 0;return () => {count = count + 1;console.log(count)}}
+// function outer() {let count = 0; return () => {return ++count}}
 
 
 // function outer() {let count = 0; return () => {count = count + 1; console.log(count)}}

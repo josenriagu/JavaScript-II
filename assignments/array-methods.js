@@ -64,7 +64,10 @@ console.log(fullName);
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = runners.map((name) => {
-    // return name.first_name.toUpperCase();
+    /* to return only an array of first names
+    return name.first_name.toUpperCase(); */
+    /* Long format 
+    return {'id': name.id, 'first_name': name.first_name.toUpperCase(), 'last_name': name.last_name, 'email': name.email, 'shirt_size': name.shirt_size, 'company_name': name.company_name, 'donation': name.donation} */
     name.first_name = name.first_name.toUpperCase();
     return name;
 });
@@ -79,8 +82,8 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = runners.reduce((acc, element) => {
-    return acc + element.donation;
+let ticketPriceTotal = runners.reduce((holder, element) => {
+    return holder + element.donation;
 }, 0);
 
 console.log(ticketPriceTotal);
@@ -96,6 +99,22 @@ let largeShirtsEven = runners.filter((size) => {
 });
 console.log(largeShirtsEven);
 
-// Problem 2
+// Problem 2 - return total price for only donations greater than 100
 
-// Problem 3
+let newRunners = runners.filter((element) => {
+    return element.donation > 100
+});
+
+let ticketPriceTotal2 = newRunners.reduce((holder, element) => {
+    return holder + element.donation
+}, 0)
+
+console.log(ticketPriceTotal2);
+
+// Problem 3 - return an array of donors whose first name start with a letter 'J'
+
+let jNames = runners.filter((element) => {
+    return element.first_name.split('')[0] === 'J'
+})
+
+console.log(jNames)
